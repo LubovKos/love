@@ -28,17 +28,6 @@ void chek_cnt_arg(int cnt_arg, const char* argv[], char name_in[], char name_out
     }
 }
 
-// Функция проверяет корректность переданных в программу файлов для чтения или записи в зависимости от param_open.
-void chek_file(FILE** file, char filename[], const char param_fopen[])
-{
-    while (strstr(filename, ".txt") == NULL or (*file = fopen(filename, param_fopen)) == NULL) {
-        if (strcmp(param_fopen, "r") == 0)
-            cout << "Такого файла для чтения нет, повторите ввод: ";
-        else
-            cout << "Такого файла для записи нет, повторите ввод: ";
-        cin >> filename;
-    }
-}
 
 int main(int argc, const char* argv[]) {
     unsigned char symbol;
